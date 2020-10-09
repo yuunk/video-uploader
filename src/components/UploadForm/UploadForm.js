@@ -21,7 +21,7 @@ class UploadForm extends Component {
                 <p>upload file.</p>
                 <input onChange={this.toggleBtnDisabled} type="file" accept=".mp4, .mov" />
 
-                <button type="submit" disabled={this.state.fileSelected}>Upload</button>
+                <button type="submit" disabled={this.state.fileSelected}>UPLOAD</button>
             </form>
         );
     }
