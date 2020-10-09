@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './UploadForm.scss';
 
-const uploadForm = () => {
-    return (
-        <form method="post" className="UploadForm">
-            <p>upload file.</p>
-            <input type="file" accept=".mp4, .mov" />
+class UploadForm extends Component {
+    state = {
+        fileSelected: true,
+    }
 
-            <button type="submit">Upload</button>
-        </form>
-    );
+    toggleBtnDisabled = () => {
+        if (this.state.fileSelected) {
+            this.setState({ fileSelected: false });
+        } else {
+            this.setState({ fileSelected: true });
+        }
+    }
+
+    render() {
+
+        return (
+            <form method="post" className="UploadForm" >
+                <p>upload file.</p>
+                <input onChange={this.toggleBtnDisabled} type="file" accept=".mp4, .mov" />
+
+                <button type="submit" disabled={this.state.fileSelected}>Upload</button>
+            </form>
+        );
+    }
+
+
 }
 
-export default uploadForm;
+
+export default UploadForm;
