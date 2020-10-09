@@ -1,0 +1,23 @@
+{
+  "name": "video-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuunk/video-uploader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuunk/video-uploader/issues"
+  },
+  "homepage": "https://github.com/yuunk/video-uploader#readme",
+  "devDependencies": {
+    "create-react-app": "^3.4.1"
+  }
+}
