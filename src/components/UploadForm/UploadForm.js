@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import './UploadForm.scss';
 import axios from 'axios';
 
@@ -15,12 +15,22 @@ class UploadForm extends Component {
         }
     }
 
-    hoge = () => {
+    submit = () => {
 
         // const [posts, setPosts] = useState([]);
 
+        let fileInputValue = this.fileInput;
+
+        console.log(fileInputValue.files[0]);
+        let formData = new FormData();
+        formData.append('video', fileInputValue.files[0]);
+
         axios
-            .get('/hoge.php')
+            .post('/upload.php', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
             .then(response => {
                 console.log(response.data);
             })
@@ -41,10 +51,18 @@ class UploadForm extends Component {
                     <p>upload file.</p>
                 </div>
                 <div>
-                    <input onChange={this.toggleBtnDisabled} type="file" accept=".mp4, .mov" />
+                    <input
+                        type="file"
+                        onChange={this.toggleBtnDisabled}
+                        accept=".mp4, .mov, .jpeg"
+                        ref={input => this.fileInput = input}
+                        name="video"
+                    />
                 </div>
                 <div>
-                    <button onClick={this.hoge} type="submit" disabled={this.state.fileSelected}>UPLOAD</button>
+                    <button
+                        onClick={this.submit}
+                        disabled={this.state.fileSelected}>UPLOAD</button>
                 </div>
             </div>
 
