@@ -1,13 +1,11 @@
-# react
-
-
-# 技術
-
 * react
-* 
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# style
+
+* husky pre-commit sorts scss properties before commit
+* style rule [read](/doc/code-rule.md)
+
 
 ## Available Scripts
 
