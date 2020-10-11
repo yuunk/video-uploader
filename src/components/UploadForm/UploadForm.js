@@ -17,8 +17,6 @@ class UploadForm extends Component {
 
     submit = () => {
 
-        // const [posts, setPosts] = useState([]);
-
         let fileInputValue = this.fileInput;
 
         console.log(fileInputValue.files[0]);
@@ -43,10 +41,8 @@ class UploadForm extends Component {
 
     render() {
 
-
         return (
-            // <form method="post" className="UploadForm" >
-            <div>
+            <div className="Form">
                 <div>
                     <p>upload file.</p>
                 </div>
@@ -65,11 +61,8 @@ class UploadForm extends Component {
                         disabled={this.state.fileSelected}>UPLOAD</button>
                 </div>
             </div>
-
-            // </form>
         );
     }
-
 
 }
 
